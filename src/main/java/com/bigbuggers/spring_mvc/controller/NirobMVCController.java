@@ -1,22 +1,22 @@
 package com.bigbuggers.spring_mvc.controller;
 
-import com.bigbuggers.spring_mvc.service.DesignMVCService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.bigbuggers.spring_mvc.service.NirobMVCService;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class DesignMVCController {
-    @Autowired
-    private DesignMVCService designMVCService;
+public class NirobMVCController {
+    private NirobMVCService nirobMVCService;
+
+    public NirobMVCController(NirobMVCService nirobMVCService) {
+        this.nirobMVCService = nirobMVCService;
+    }
 
     @GetMapping("/mvc")
     //@ResponseBody
     public String greeting(Model model) {
-        String massage = designMVCService.getMVCGreeting();
+        String massage = nirobMVCService.getMVCGreeting();
         model.addAttribute("textField", massage);
         return "greetingNirob";
     }
