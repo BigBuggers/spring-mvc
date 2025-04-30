@@ -1,24 +1,23 @@
 package com.bigbuggers.spring_mvc.controller;
 
-import com.bigbuggers.spring_mvc.service.HasanGreetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.bigbuggers.spring_mvc.service.RobiulService;
+
 @Controller
-
-public class HasanGreetController {
-
-    @Autowired
-   private HasanGreetService hasanGreetService;
-
+public class RobiulController {
+	@Autowired
+	private RobiulService robiulService;
     @GetMapping("/greeting/robiul")
     String getGreeting(Model model)
     {
-        String message = hasanGreetService.greetMessage();
+        String message = robiulService.greetMessage();
         model.addAttribute("message", message);
         return "greeting";
     }
+
 
 }
