@@ -19,5 +19,4 @@ public class RobiulController {
         return "greeting";
     }
 
-
 }
