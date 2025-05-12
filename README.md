@@ -1,2 +1,2 @@
 # spring-mvc
-It is a demo spring-mvc project.
+spring-mvc r&d project.
